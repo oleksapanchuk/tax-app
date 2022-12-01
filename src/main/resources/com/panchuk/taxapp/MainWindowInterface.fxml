@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<!--        fx:controller="com.panchuk.taxapp.MainAppController"-->
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" styleClass="root" stylesheets="@MainWindowStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.panchuk.taxapp.MainAppController">
+   <children>
+      <Pane fx:id="titlePane" layoutY="-3.0" prefHeight="50.0" prefWidth="1100.0">
+         <children>
+            <ImageView fx:id="btnClose" fitHeight="30.0" fitWidth="30.0" layoutX="1030.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/close.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btnMinimize" fitHeight="30.0" fitWidth="30.0" layoutX="980.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/hide.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btnMinimize1" fitHeight="30.0" fitWidth="30.0" layoutX="27.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/money-logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="350.0" layoutY="15.0" text="Tax Application ~ Panchuk Oleksandr" textFill="#f2ffff">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="6.0" layoutY="31.0" prefHeight="590.0" prefWidth="1134.0" styleClass="mainPane" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.0">
+         <children>
+            <Pane layoutX="874.0" layoutY="43.0" prefHeight="500.0" prefWidth="200.0" styleClass="mainMenuPane">
+               <children>
+                  <VBox layoutX="1.0" layoutY="-6.0" prefHeight="513.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnAddUser" mnemonicParsing="false" onAction="#handleButton1Action" prefHeight="45.0" prefWidth="200.0" styleClass="btnMainMenu" text="ADD USER" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets bottom="40.0" left="20.0" right="20.0" top="30.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleButton2Action" prefHeight="45.0" prefWidth="200.0" styleClass="btnMainMenu" text="GET USER" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets bottom="40.0" left="20.0" right="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleButton3Action" prefHeight="45.0" prefWidth="200.0" styleClass="btnMainMenu" text="FIND USER" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets bottom="40.0" left="20.0" right="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleButton4Action" prefHeight="45.0" prefWidth="200.0" styleClass="btnMainMenu" text="SORT USER" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets bottom="40.0" left="20.0" right="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleButton5Action" prefHeight="45.0" prefWidth="200.0" styleClass="btnMainMenu" text="FIND TAX" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets bottom="35.0" left="20.0" right="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleButton6Action" prefHeight="45.0" prefWidth="200.0" styleClass="btnMainMenu" text="SHOW USERS" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets bottom="40.0" left="20.0" right="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children></Pane>
+            <BorderPane fx:id="borderPane" layoutX="20.0" layoutY="14.0" prefHeight="560.0" prefWidth="830.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

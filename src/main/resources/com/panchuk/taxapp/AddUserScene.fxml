@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="560.0" prefWidth="830.0" styleClass="rootScene" stylesheets="@MainWindowStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.panchuk.taxapp.scene_controller.AddUserController">
+   <children>
+      <Label layoutX="413.0" layoutY="18.0" prefHeight="56.0" prefWidth="208.0" styleClass="lblZag" text="Add User" textFill="#212976">
+         <font>
+            <Font name="Bauhaus 93" size="48.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="519.0" fitWidth="397.0" layoutX="14.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+         <image>
+            <Image url="@img/tax_time.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfFirstName" layoutX="578.0" layoutY="86.0" prefHeight="28.0" prefWidth="227.0" styleClass="addInput" />
+      <Label layoutX="413.0" layoutY="86.0" prefHeight="26.0" prefWidth="175.0" styleClass="lblZag" text="FIRST NAME" textFill="#212976">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfLastName" layoutX="578.0" layoutY="127.0" prefHeight="28.0" prefWidth="227.0" styleClass="addInput" />
+      <TextField fx:id="tfEmail" layoutX="578.0" layoutY="166.0" prefHeight="26.0" prefWidth="227.0" styleClass="addInput" />
+      <DatePicker fx:id="datePicker" layoutX="571.0" layoutY="347.0" prefHeight="26.0" prefWidth="227.0" styleClass="addInput" />
+      <RadioButton fx:id="rbMale" layoutX="578.0" layoutY="214.0" mnemonicParsing="false" styleClass="lblZag" text="MALE" textFill="#4f31e1">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="rbFemale" layoutX="578.0" layoutY="249.0" mnemonicParsing="false" styleClass="lblZag" text="FEMALE" textFill="#4f31e1">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="rbOther" layoutX="578.0" layoutY="280.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="118.0" styleClass="lblZag" text="OTHER" textFill="#4f31e1">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </RadioButton>
+      <Button fx:id="btnAdd" layoutX="492.0" layoutY="431.0" mnemonicParsing="false" onAction="#addAndShowButton" prefHeight="70.0" prefWidth="257.0" text="ADD" textFill="#0d0891">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="36.0" />
+         </font>
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="userButton" />
+            <String fx:value="lblZag" />
+         </styleClass>
+      </Button>
+      <Label layoutX="413.0" layoutY="127.0" prefHeight="26.0" prefWidth="175.0" styleClass="lblZag" text="LAST NAME" textFill="#212976">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="410.0" layoutY="165.0" prefHeight="28.0" prefWidth="86.0" styleClass="lblZag" text="EMAIL" textFill="#212976">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="410.0" layoutY="346.0" prefHeight="28.0" prefWidth="157.0" styleClass="lblZag" text="BIRTH DATE" textFill="#212976">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="410.0" layoutY="204.0" prefHeight="28.0" prefWidth="86.0" styleClass="lblZag" text="SEX" textFill="#212976">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
+         </font>
+      </Label>
+      <Pane layoutX="413.0" layoutY="74.0" prefHeight="4.0" prefWidth="393.0" styleClass="lblLine" />
+   </children>
+</AnchorPane>

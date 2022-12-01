@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="560.0" prefWidth="830.0" styleClass="rootScene" stylesheets="@MainWindowStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.panchuk.taxapp.scene_controller.SortUserSceneController">
+   <children>
+      <Label layoutX="48.0" layoutY="21.0" prefHeight="54.0" prefWidth="325.0" styleClass="lblZag" text="SORT USERS BY" textFill="#3a2299">
+         <font>
+            <Font name="Bauhaus 93" size="48.0" />
+         </font>
+      </Label>
+      <Pane layoutX="374.0" layoutY="19.0" prefHeight="54.0" prefWidth="403.0" styleClass="userMenu">
+         <children>
+            <HBox layoutX="14.0" layoutY="-3.0" prefHeight="71.0" prefWidth="376.0">
+               <children>
+                  <Button fx:id="btnSortByFirstName" mnemonicParsing="false" onAction="#actionSortFirst" prefHeight="26.0" prefWidth="110.0" styleClass="userButton" text="first name" textFill="#166356">
+                     <HBox.margin>
+                        <Insets top="18.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSortByLastName" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#actionSortLast" prefWidth="110.0" styleClass="userButton" text="last name" textFill="#166356">
+                     <HBox.margin>
+                        <Insets left="22.0" right="22.0" top="18.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSortByAmountOfTax" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#actionSortAmount" prefHeight="27.0" prefWidth="126.0" styleClass="userButton" text="amount of tax" textFill="#166356">
+                     <HBox.margin>
+                        <Insets top="18.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <TableView fx:id="usersTable" layoutX="7.0" layoutY="94.0" prefHeight="457.0" prefWidth="815.0" styleClass="userTable">
+         <columns>
+            <TableColumn fx:id="idCol" maxWidth="50.0" prefWidth="50.0" text="ID" />
+            <TableColumn fx:id="fnameCol" maxWidth="100.0" prefWidth="120.0" text="FIRST NAME" />
+            <TableColumn fx:id="lnameCol" maxWidth="120.0" prefWidth="120.0" text="LAST NAME" />
+            <TableColumn fx:id="sexCol" maxWidth="70.0" prefWidth="70.0" text="SEX" />
+            <TableColumn fx:id="birthDCol" maxWidth="100.0" prefWidth="90.0" text="BIRTH DATE" />
+            <TableColumn fx:id="emailCol" maxWidth="190.0" prefWidth="190.0" text="EMAIL" />
+            <TableColumn fx:id="taxCol" maxWidth="90.0" prefWidth="90.0" text="TAX" />
+            <TableColumn fx:id="editCol" maxWidth="100.0" prefWidth="100.0" text="EDIT" />
+         </columns>
+      </TableView>
+      <Pane layoutX="47.0" layoutY="82.0" prefHeight="5.0" prefWidth="739.0" styleClass="lblLine" />
+   </children>
+</AnchorPane>

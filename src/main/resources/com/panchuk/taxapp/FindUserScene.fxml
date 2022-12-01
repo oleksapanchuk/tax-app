@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="560.0" prefWidth="830.0" styleClass="rootScene" stylesheets="@MainWindowStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.panchuk.taxapp.scene_controller.FindUserSceneController">
+   <children>
+      <HBox layoutX="366.0" layoutY="71.0" prefHeight="34.0" prefWidth="376.0">
+         <children>
+            <Button fx:id="btnFindByFirstName" mnemonicParsing="false" onAction="#actionFirst" prefHeight="26.0" prefWidth="110.0" text="FIRST NAME" textFill="#1f2873">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="userButton" />
+                  <String fx:value="lblZag" />
+               </styleClass>
+            </Button>
+            <Button fx:id="btnFindByLastName" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#actionLast" prefWidth="110.0" text="LAST NAME" textFill="#166356">
+               <HBox.margin>
+                  <Insets left="22.0" right="22.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="userButton" />
+                  <String fx:value="lblZag" />
+               </styleClass>
+            </Button>
+            <Button fx:id="btnFindByEmail" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#actionEmail" prefWidth="110.0" text="EMAIL" textFill="#166356">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="userButton" />
+                  <String fx:value="lblZag" />
+               </styleClass>
+            </Button>
+         </children>
+      </HBox>
+      <Label layoutX="45.0" layoutY="52.0" styleClass="lblZag" text="FIND USER BY" textFill="#6e0e6c">
+         <font>
+            <Font name="Bauhaus 93" size="48.0" />
+         </font>
+      </Label>
+      <Pane layoutX="366.0" layoutY="14.0" prefHeight="42.0" prefWidth="311.0" styleClass="userMenu">
+         <children>
+            <TextField fx:id="tfForFind" layoutX="133.0" layoutY="9.0" prefHeight="25.0" prefWidth="161.0" />
+            <Label layoutX="14.0" layoutY="10.0" styleClass="lblZag" text="INPUT INFO:" textFill="#23158f">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TableView fx:id="usersTable" layoutX="14.0" layoutY="127.0" prefHeight="422.0" prefWidth="802.0" styleClass="userTable">
+         <columns>
+            <TableColumn fx:id="idCol" maxWidth="50.0" prefWidth="50.0" text="ID" />
+            <TableColumn fx:id="fnameCol" maxWidth="120.0" prefWidth="120.0" text="FIRST NAME" />
+            <TableColumn fx:id="lnameCol" maxWidth="120.0" prefWidth="120.0" text="LAST NAME" />
+            <TableColumn fx:id="sexCol" maxWidth="70.0" prefWidth="70.0" text="SEX" />
+            <TableColumn fx:id="birthDCol" maxWidth="90.0" prefWidth="90.0" text="BIRTH DATE" />
+            <TableColumn fx:id="emailCol" maxWidth="160.0" prefWidth="160.0" text="EMAIL" />
+            <TableColumn fx:id="taxCol" maxWidth="90.0" prefWidth="90.0" text="TAX" />
+            <TableColumn fx:id="editCol" maxWidth="100.0" prefWidth="97.60009765625" text="EDIT" />
+         </columns>
+      </TableView>
+      <Pane layoutX="45.0" layoutY="115.0" prefHeight="5.0" prefWidth="739.0" styleClass="lblLine" />
+      <ImageView fitHeight="69.0" fitWidth="81.0" layoutX="716.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/zoom.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

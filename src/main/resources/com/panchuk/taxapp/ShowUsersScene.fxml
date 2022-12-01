@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="560.0" prefWidth="830.0" styleClass="rootScene" stylesheets="@MainWindowStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.panchuk.taxapp.scene_controller.ShowUsersSceneController">
+   <children>
+      <Label layoutX="61.0" layoutY="14.0" styleClass="lblZag" text="ALL USERS" textFill="#004f6e">
+         <font>
+            <Font name="Bauhaus 93" size="48.0" />
+         </font>
+      </Label>
+      <TableView fx:id="usersTable" layoutX="14.0" layoutY="81.0" prefHeight="464.0" prefWidth="808.0" styleClass="userTable">
+        <columns>
+          <TableColumn fx:id="idCol" maxWidth="50.0" prefWidth="50.0" text="ID" />
+          <TableColumn fx:id="fnameCol" maxWidth="120.0" prefWidth="120.0" text="FIRST NAME" />
+            <TableColumn fx:id="lnameCol" maxWidth="120.0" prefWidth="120.0" text="LAST NAME" />
+            <TableColumn fx:id="sexCol" maxWidth="60.0" prefWidth="60.0" text="SEX" />
+            <TableColumn fx:id="birthDCol" maxWidth="90.0" prefWidth="90.0" text="BIRTH DATE" />
+            <TableColumn fx:id="emailCol" maxWidth="170.0" prefWidth="170.0" text="EMAIL" />
+            <TableColumn fx:id="taxCol" maxWidth="90.0" prefWidth="90.0" text="TAX" />
+            <TableColumn fx:id="editCol" maxWidth="105.0" prefWidth="105.0" text="EDIT" />
+        </columns>
+      </TableView>
+      <Pane layoutX="61.0" layoutY="68.0" prefHeight="5.0" prefWidth="739.0" styleClass="lblLine" />
+   </children>
+</AnchorPane>

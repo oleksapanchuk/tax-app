@@ -1,0 +1,122 @@
+.root {
+    -fx-background-color: #222;
+    -fx-background-radius: 28;
+}
+
+.mainPane {
+    -fx-background-color: linear-gradient(to bottom right, rgba(80, 255, 249, 0.86), #30a467);
+    -fx-background-radius: 15 15 25 25;
+}
+
+.mainMenuPane {
+    -fx-background-color: linear-gradient(to bottom right, rgba(195, 253, 253, 0.98), rgba(204, 242, 243, 0.9));
+    -fx-background-radius: 15 15 25 25;
+}
+
+.rootScene {
+    -fx-background-color: rgba(138, 213, 205, 0.59);
+    -fx-border-width: 1px;
+    -fx-border-color: rgb(30, 147, 134);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+}
+
+.userMenu {
+    -fx-background-color: rgba(94, 213, 224, 0.85);
+    -fx-background-radius: 40;
+    -fx-border-color: rgb(18, 69, 96);
+    -fx-border-width: 1px;
+    -fx-border-radius: 40;
+}
+
+.userButton {
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-background-radius: 20;
+    -fx-border-color: rgb(22, 39, 119);
+    -fx-border-radius: 20;
+}
+
+.btnMainMenu {
+    -fx-background-color: rgba(69, 148, 196, 0.91);
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(0, 23, 178, 0.91);
+    -fx-border-width: 1px;
+    -fx-border-radius: 20;
+}
+
+
+.tableUserView {
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-background-radius: 20;
+}
+
+.getUserById {
+    -fx-background-color: rgb(154, 226, 255);
+    -fx-background-radius: 50;
+    -fx-border-color: rgb(15, 87, 178);
+    -fx-border-width: 1px;
+    -fx-border-radius: 50;
+    -fx-text-fill: #004f6e;
+}
+
+.userTable {
+    -fx-alignment: center;
+}
+
+.btn:hover {
+    -fx-cursor: hand;
+}
+
+.table-view {
+    -fx-background-color: rgba(142, 224, 227, 0.92);
+    -fx-background-radius: 35;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #3649ab;
+    -fx-background-radius: 20 20 0 0;
+    -fx-background-insets: 0 0 10 0;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 50px;
+    -fx-border-width: 0 0 10 0;
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #ffffff;
+}
+
+.imgStart {
+    -fx-background-radius: 20;
+}
+
+.lblZag {
+    -fx-text-fill: #004f6e;
+}
+
+.lblLine {
+    -fx-background-color: #004f6e;
+    -fx-background-radius: 5;
+}
+
+.addInput {
+    -fx-border-color: #004f6e;
+    -fx-border-radius: 5;
+    -fx-text-fill: #004f6e;
+    -fx-font-family: "Arial Rounded MT Bold";
+}
+
+/*--------------*/
+.userScene {
+    -fx-background-color: #84ff90;
+    -fx-background-radius: 0;
+}
+
+.taxType {
+    -fx-background-color: linear-gradient(to bottom right, rgb(132, 255, 181), #52ffcb);
+    -fx-background-radius: 3;
+    -fx-border-color: #004f6e;
+    -fx-border-radius:3;
+}
