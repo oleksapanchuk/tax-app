@@ -4,14 +4,15 @@ import java.util.Objects;
 
 public abstract class TaxType {
     protected int idNumber;
-    protected int TYPE;
+    protected int type;
     protected String nameTax;
     protected double multiplier;
     protected double value;
     protected double amountOfTax;
     protected String datePayment;
 
-    protected TaxType(int idNumber, String nameTax, double multiplier) {
+    protected TaxType(int type, int idNumber, String nameTax, double multiplier) {
+        this.type = type;
         this.idNumber = idNumber;
         this.nameTax = nameTax;
         this.multiplier = multiplier;
@@ -26,7 +27,7 @@ public abstract class TaxType {
 
     public void setIdNumber(int idNumber) { this.idNumber = idNumber; }
 
-    public int getType() { return TYPE; }
+    public int getType() { return type; }
 
     public void setNameTax(String nameTax) { this.nameTax = nameTax; }
 
@@ -55,19 +56,19 @@ public abstract class TaxType {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TaxType taxType = (TaxType) o;
-        return idNumber == taxType.idNumber && TYPE == taxType.TYPE && Double.compare(taxType.multiplier, multiplier) == 0 && Double.compare(taxType.value, value) == 0 && Double.compare(taxType.amountOfTax, amountOfTax) == 0 && Objects.equals(nameTax, taxType.nameTax) && Objects.equals(datePayment, taxType.datePayment);
+        return idNumber == taxType.idNumber && type == taxType.type && Double.compare(taxType.multiplier, multiplier) == 0 && Double.compare(taxType.value, value) == 0 && Double.compare(taxType.amountOfTax, amountOfTax) == 0 && Objects.equals(nameTax, taxType.nameTax) && Objects.equals(datePayment, taxType.datePayment);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idNumber, TYPE, nameTax, multiplier, value, amountOfTax, datePayment);
+        return Objects.hash(idNumber, type, nameTax, multiplier, value, amountOfTax, datePayment);
     }
 
     @Override
     public String toString() {
         return "TaxType{" +
                 "idNumber=" + idNumber +
-                ", TYPE=" + TYPE +
+                ", TYPE=" + type +
                 ", value=" + value +
                 ", amountOfTax=" + amountOfTax +
                 ", datePayment='" + datePayment + '\'' +

@@ -1,8 +1,6 @@
 package com.panchuk.taxapp.scene_controller;
 
-import com.panchuk.taxapp.AddTaxSceneController;
-import com.panchuk.taxapp.DAOException;
-import com.panchuk.taxapp.MainApplication;
+import com.panchuk.taxapp.*;
 import com.panchuk.taxapp.constant.ProjectConstant;
 import com.panchuk.taxapp.dao.DAOFactory;
 import com.panchuk.taxapp.model.TaxType;
@@ -20,6 +18,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.Objects;
@@ -109,6 +108,35 @@ public class UserSceneController implements Initializable {
 
     }
 
+    @FXML
+    private void deleteTax() throws IOException {
+        FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("DeleteTaxScene.fxml"));
+
+        Scene scene = new Scene(loader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Delete Tax");
+        stage.initStyle(StageStyle.DECORATED);
+        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/panchuk/taxapp/img/money-logo.png"))));
+        stage.show();
+
+        ((DeleteTaxSceneController) loader.getController()).init(stage, tempUser);
+    }
+
+    @FXML
+    private void updateUser() throws IOException {
+        FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("UpdateUserScene.fxml"));
+
+        Scene scene = new Scene(loader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Update User");
+        stage.initStyle(StageStyle.DECORATED);
+        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/panchuk/taxapp/img/money-logo.png"))));
+        stage.show();
+
+        ((UpdateUserSceneController) loader.getController()).init(stage, tempUser);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

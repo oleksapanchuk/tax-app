@@ -4,6 +4,7 @@ import com.panchuk.taxapp.DAOException;
 import com.panchuk.taxapp.constant.ProjectConstant;
 import com.panchuk.taxapp.dao.DAOFactory;
 import com.panchuk.taxapp.model.TaxType;
+import javafx.scene.control.Alert;
 import org.apache.log4j.Logger;
 
 import java.util.List;
@@ -65,12 +66,34 @@ public class Validator {
         return false;
     }
 
-    public static boolean validationDouble(String inputData) {
-        return ProjectConstant.VALID_DOUBLE.matcher(String.valueOf(inputData)).matches();
-    }
 
     public static boolean validationString(String inputData, Pattern pattern) {
         return pattern.matcher(inputData).matches();
     }
 
+    public static boolean isInteger(String strInt, String fieldName) {
+        try {
+            int i = Integer.parseInt(strInt);
+            return true;
+        } catch (NumberFormatException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.getDialogPane().setHeaderText("INPUT ERROR");
+            alert.getDialogPane().setContentText("IT IS NOT INTEGER VALUE WAS ENTERED IN " + fieldName.toUpperCase() + " FIELD!");
+            alert.showAndWait();
+            return false;
+        }
+    }
+
+    public static boolean isDouble(String strIDouble, String fieldName) {
+        try {
+            double d = Double.parseDouble(strIDouble);
+            return true;
+        } catch (NumberFormatException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.getDialogPane().setHeaderText("INPUT ERROR");
+            alert.getDialogPane().setContentText("IT IS NOT DOUBLE VALUE WAS ENTERED AT " + fieldName.toUpperCase() + " FIELD!");
+            alert.showAndWait();
+            return false;
+        }
+    }
 }

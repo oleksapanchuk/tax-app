@@ -58,7 +58,8 @@
       <TableView fx:id="taxesTable" layoutX="13.0" layoutY="138.0" prefHeight="411.0" prefWidth="802.0" styleClass="userTable">
          <columns>
             <TableColumn fx:id="idPaymentCol" maxWidth="60.0" prefWidth="60.0" text="ID" />
-            <TableColumn fx:id="taxNameCol" maxWidth="400.0" prefWidth="400.0" text="TAX NAME " />
+            <TableColumn fx:id="taxTypeCol" maxWidth="100.0" prefWidth="100.0" text="TYPE" />
+            <TableColumn fx:id="taxNameCol" maxWidth="300.0" prefWidth="300.0" text="USER NAME " />
             <TableColumn fx:id="valueCol" maxWidth="100.0" prefWidth="100.0" text="VALUE" />
             <TableColumn fx:id="amountTaxCol" maxWidth="100.0" prefWidth="100.0" text="AMOUT TAX" />
             <TableColumn fx:id="dPaymentCol" maxWidth="140.0" prefWidth="140.0" text="DATE OF PAYMENT" />

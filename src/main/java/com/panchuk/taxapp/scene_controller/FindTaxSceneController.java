@@ -6,9 +6,11 @@ import com.panchuk.taxapp.dao.DAOFactory;
 import com.panchuk.taxapp.model.TaxType;
 import com.panchuk.taxapp.model.User;
 import com.panchuk.taxapp.util.LoggerController;
+import com.panchuk.taxapp.util.Validator;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -32,6 +34,8 @@ public class FindTaxSceneController implements Initializable {
     private TableColumn<User, String> idPaymentCol;
     @FXML
     private TableColumn<User, String> taxNameCol;
+    @FXML
+    private TableColumn<User, String> taxTypeCol;
     @FXML
     private TableColumn<User, String> valueCol;
     @FXML
@@ -57,8 +61,15 @@ public class FindTaxSceneController implements Initializable {
 
     @FXML
     public void actionRange() {
-        double startRange = Double.parseDouble(tfStartRange.getText());
-        double endRange = Double.parseDouble(tfEndRange.getText());
+
+        String startValueStr = tfStartRange.getText();
+        String endValueStr = tfEndRange.getText();
+
+        if (!Validator.isDouble(startValueStr, "start value")) return;
+        double startRange = Double.parseDouble(startValueStr);
+        if (!Validator.isDouble(endValueStr, "end value")) return;
+        double endRange = Double.parseDouble(endValueStr);
+
         List<TaxType> taxList;
         try {
             taxList = daoFactory.getTaxDAO().findTaxByFilter(ProjectConstant.FIND_BY_RANGE + startRange + "-" + endRange);
@@ -72,7 +83,13 @@ public class FindTaxSceneController implements Initializable {
 
     @FXML
     public void actionType() {
-        int type = Integer.parseInt(tfFindType.getText());
+        String typeStr = tfFindType.getText();
+        if (!Validator.isInteger(typeStr, "tax type")) return;
+        int type = Integer.parseInt(typeStr);
+        if (type < 1 || type > 7) {
+            showAlert("Tax type is in range [1 - 7]");
+            return;
+        }
         List<TaxType> taxList;
         try {
             taxList = daoFactory.getTaxDAO().findTaxByFilter(ProjectConstant.FIND_BY_TYPE + type);
@@ -87,6 +104,7 @@ public class FindTaxSceneController implements Initializable {
     public void loadData() {
 
         idPaymentCol.setCellValueFactory(new PropertyValueFactory<>("idNumber"));
+        taxTypeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
         taxNameCol.setCellValueFactory(new PropertyValueFactory<>("nameTax"));
         valueCol.setCellValueFactory(new PropertyValueFactory<>("value"));
         amountTaxCol.setCellValueFactory(new PropertyValueFactory<>("amountOfTax"));
@@ -94,4 +112,10 @@ public class FindTaxSceneController implements Initializable {
 
     }
 
+    private void showAlert(String text) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setHeaderText(null);
+        alert.setContentText(text);
+        alert.showAndWait();
+    }
 }

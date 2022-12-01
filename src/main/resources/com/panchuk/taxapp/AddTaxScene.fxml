@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="560.0" prefWidth="830.0" styleClass="userScene" stylesheets="@MainWindowStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.panchuk.taxapp.AddTaxSceneController">
+<AnchorPane prefHeight="560.0" prefWidth="830.0" styleClass="userScene" stylesheets="@MainWindowStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.panchuk.taxapp.scene_controller.AddTaxSceneController">
    <children>
       <Label layoutX="38.0" layoutY="14.0" text="TAX TYPES" textFill="#143676">
          <font>

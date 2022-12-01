@@ -1,10 +1,11 @@
-package com.panchuk.taxapp;
+package com.panchuk.taxapp.scene_controller;
 
+import com.panchuk.taxapp.DAOException;
+import com.panchuk.taxapp.MainApplication;
 import com.panchuk.taxapp.constant.ProjectConstant;
 import com.panchuk.taxapp.dao.DAOFactory;
 import com.panchuk.taxapp.model.TaxType;
 import com.panchuk.taxapp.model.User;
-import com.panchuk.taxapp.scene_controller.ShowUsersSceneController;
 import com.panchuk.taxapp.util.LoggerController;
 import com.panchuk.taxapp.util.TaxController;
 import com.panchuk.taxapp.util.Validator;
@@ -65,22 +66,21 @@ public class AddTaxSceneController{
             return;
         }
 
+        if (!Validator.isInteger(idPaymentStr, "id payment")) return;
         int idPayment = Integer.parseInt(idPaymentStr);
         if (!Validator.validationIdNumberForTax(idPayment)) {
             showAlert("Payment id is not valid");
             return;
         }
 
+        if (!Validator.isInteger(typeStr, "tax type")) return;
         int type = Integer.parseInt(typeStr);
         if (type < 1 || type > 7) {
-            showAlert("Tax type is not valid");
+            showAlert("Tax type is in range [1 - 7]");
             return;
         }
 
-        if (!Validator.validationDouble(valueStr)) {
-            showAlert("Value is not valid");
-            return;
-        }
+        if (!Validator.isDouble(valueStr, "value")) return;
         double value = Double.parseDouble(valueStr);
 
         if (!Validator.validationString(dateStr, ProjectConstant.VALID_DATE)) {
