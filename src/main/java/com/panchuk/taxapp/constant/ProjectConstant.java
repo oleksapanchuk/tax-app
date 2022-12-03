@@ -8,7 +8,7 @@ public class ProjectConstant {
     public static final String SETTINGS_FILE = "app.properties";
     public static final String CONNECTION_URL = "connection.url";
     public static final String DAO_FACTORY_FQN = "com.panchuk.taxapp.dao.mysql.MysqlDAOFactory";
-//    public static final String DAO_FACTORY_FQN = "com.panchuk.tax.dao.xml.XMLDAOFactory";
+//    public static final String DAO_FACTORY_FQN = "com.panchuk.taxapp.dao.xml.XMLDAOFactory";
 
 //    public static final String writeXMLPath = "xml/user.xml";
     public static final String writeXMLPath = "src/main/resources/test_user.xml";   // for testing

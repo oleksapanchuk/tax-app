@@ -13,10 +13,12 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.apache.log4j.Logger;
 
 import java.util.Optional;
 
 public class UpdateUserSceneController {
+    static final Logger logger = Logger.getLogger(UpdateUserSceneController.class);
     private Stage stage;
     private User user;
     @FXML
@@ -45,6 +47,8 @@ public class UpdateUserSceneController {
     @FXML
     private void updateUserBtn() throws DAOException {
 
+        logger.info("updateUser clicked");
+
         String fName = tfupfName.getText().trim();
         String lName = tfuplName.getText().trim();
         String email = tfupEmail.getText().trim();
@@ -53,21 +57,28 @@ public class UpdateUserSceneController {
             showAlert("Please fill ALL DATE");
             return;
         }
+        logger.info("All field are filled");
 
         if (!Validator.validationString(fName, ProjectConstant.VALID_FIRST_NAME)) {
             showAlert("First Name is not valid");
+            logger.info("First Name is not valid");
             return;
         }
+        logger.info("First Name is correct");
 
         if (!Validator.validationString(lName, ProjectConstant.VALID_LAST_NAME)) {
             showAlert("Last Name is not valid");
+            logger.info("Last Name is not valid");
             return;
         }
+        logger.info("Last Name is correct");
 
         if (!Validator.validationString(email, ProjectConstant.VALID_EMAIL)) {
             showAlert("Email is not valid");
+            logger.info("Email is not valid");
             return;
         }
+        logger.info("Email is correct");
 
         Alert alert = new Alert(Alert.AlertType.NONE);
         alert.setAlertType(Alert.AlertType.CONFIRMATION);
@@ -100,6 +111,7 @@ public class UpdateUserSceneController {
 
 
     private void showAlert(String text) {
+        logger.info("Show Alert");
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setHeaderText(null);
         alert.setContentText(text);

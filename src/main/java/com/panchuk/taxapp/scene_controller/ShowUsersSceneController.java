@@ -20,12 +20,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.util.Callback;
+import org.apache.log4j.Logger;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class ShowUsersSceneController implements Initializable {
+    static final Logger logger = Logger.getLogger(ShowUsersSceneController.class);
 
     @FXML
     private TableView<User> usersTable;
@@ -78,6 +80,7 @@ public class ShowUsersSceneController implements Initializable {
     }
 
     public void loadData() {
+        logger.info("loadData");
 
         idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         fnameCol.setCellValueFactory(new PropertyValueFactory<>("firstName"));

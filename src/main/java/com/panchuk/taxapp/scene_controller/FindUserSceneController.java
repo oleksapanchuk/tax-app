@@ -20,12 +20,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.util.Callback;
+import org.apache.log4j.Logger;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class FindUserSceneController implements Initializable {
+    static final Logger logger = Logger.getLogger(FindUserSceneController.class);
     @FXML
     private TableView<User> usersTable;
 
@@ -69,6 +71,7 @@ public class FindUserSceneController implements Initializable {
 
     @FXML
     public void actionFirst() {
+        logger.info("actionFirst clicked");
         String searchInfo = tfForFind.getText().trim();
 
         loadDate();
@@ -86,6 +89,7 @@ public class FindUserSceneController implements Initializable {
 
     @FXML
     public void actionLast() {
+        logger.info("actionLast clicked");
         String searchInfo = tfForFind.getText().trim();
         List<User> userList;
         try {
@@ -100,6 +104,7 @@ public class FindUserSceneController implements Initializable {
 
     @FXML
     public void actionEmail() {
+        logger.info("actionEmail clicked");
         String searchInfo = tfForFind.getText().trim();
         List<User> userList;
         try {
@@ -113,6 +118,7 @@ public class FindUserSceneController implements Initializable {
     }
 
     public void loadDate() {
+        logger.info("load date");
 
         idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         fnameCol.setCellValueFactory(new PropertyValueFactory<>("firstName"));

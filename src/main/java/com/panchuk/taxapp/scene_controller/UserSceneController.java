@@ -17,6 +17,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.net.URL;
@@ -26,6 +27,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class UserSceneController implements Initializable {
+    static final Logger logger = Logger.getLogger(UserSceneController.class);
 
     private static User tempUser;
 
@@ -67,6 +69,8 @@ public class UserSceneController implements Initializable {
     @FXML
     private void addTax() throws Exception {
 
+        logger.info("AddTax clicked");
+
         FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("AddTaxScene.fxml"));
 
         Scene scene = new Scene(loader.load());
@@ -83,6 +87,8 @@ public class UserSceneController implements Initializable {
 
     @FXML
     private void deleteUser() throws DAOException {
+
+        logger.info("DELETE USER clicked");
 
         Alert alert = new Alert(Alert.AlertType.NONE);
         alert.setAlertType(Alert.AlertType.CONFIRMATION);
@@ -110,6 +116,9 @@ public class UserSceneController implements Initializable {
 
     @FXML
     private void deleteTax() throws IOException {
+
+        logger.info("DeleteTax clicked");
+
         FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("DeleteTaxScene.fxml"));
 
         Scene scene = new Scene(loader.load());
@@ -125,6 +134,9 @@ public class UserSceneController implements Initializable {
 
     @FXML
     private void updateUser() throws IOException {
+
+        logger.info("UpdateUser clicked");
+
         FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("UpdateUserScene.fxml"));
 
         Scene scene = new Scene(loader.load());
@@ -140,6 +152,8 @@ public class UserSceneController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        logger.info("User Scene Controller init");
 
         userFullName.setText(tempUser.getFirstName() + " " + tempUser.getLastName());
 
@@ -175,6 +189,8 @@ public class UserSceneController implements Initializable {
         valueCol.setCellValueFactory(new PropertyValueFactory<>("value"));
         amountTaxCol.setCellValueFactory(new PropertyValueFactory<>("amountOfTax"));
         dPaymentCol.setCellValueFactory(new PropertyValueFactory<>("datePayment"));
+
+        logger.info("Data loaded");
 
     }
 }

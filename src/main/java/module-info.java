@@ -7,7 +7,6 @@ module com.panchuk.taxapp {
     requires java.sql;
     requires de.jensd.fx.glyphs.fontawesome;
 
-
     opens com.panchuk.taxapp to javafx.fxml;
     exports com.panchuk.taxapp;
     exports com.panchuk.taxapp.model;

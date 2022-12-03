@@ -11,7 +11,6 @@ import java.util.Properties;
 
 public class DBCPDataSource {
     private static final BasicDataSource ds = new BasicDataSource();
-
     private static final Properties properties = new Properties();
     private static final String DATABASE_URL;
 
@@ -34,6 +33,7 @@ public class DBCPDataSource {
     public static Connection getConnection() throws SQLException {
         return ds.getConnection();
     }
+
 
     private DBCPDataSource(){ }
 }

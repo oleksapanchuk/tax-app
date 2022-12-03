@@ -13,10 +13,12 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.apache.log4j.Logger;
 
 import java.util.Optional;
 
 public class DeleteTaxSceneController {
+    static final Logger logger = Logger.getLogger(FindUserSceneController.class);
     private Stage stage;
     private User user;
     @FXML
@@ -39,6 +41,7 @@ public class DeleteTaxSceneController {
 
     @FXML
     private void deleteTaxID() throws DAOException {
+        logger.info("deleteTaxID clicked");
 
         String idPaymentStr = tfDeleteTax.getText().trim();
         if (!Validator.isInteger(idPaymentStr, "id tax")) return;

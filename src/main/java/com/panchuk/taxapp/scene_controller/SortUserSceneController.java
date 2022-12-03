@@ -19,12 +19,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.util.Callback;
+import org.apache.log4j.Logger;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class SortUserSceneController implements Initializable {
+    static final Logger logger = Logger.getLogger(SortUserSceneController.class);
 
     @FXML
     private TableView<User> usersTable;
@@ -77,6 +79,7 @@ public class SortUserSceneController implements Initializable {
 
     @FXML
     public void actionSortLast() {
+        logger.info("actionSortLast clicked");
         List<User> userList;
         try {
             userList = daoFactory.getTaxDAO().findUserByFilter(ProjectConstant.SORT_BY_LAST_NAME);
@@ -89,7 +92,7 @@ public class SortUserSceneController implements Initializable {
 
     @FXML
     public void actionSortAmount() {
-
+        logger.info("actionSortAmount clicked");
         List<User> userList;
         try {
             userList = daoFactory.getTaxDAO().findUserByFilter(ProjectConstant.SORT_BY_AMOUNT);
@@ -101,6 +104,7 @@ public class SortUserSceneController implements Initializable {
     }
 
     public void loadData() {
+        logger.info("loadData");
 
         idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         fnameCol.setCellValueFactory(new PropertyValueFactory<>("firstName"));

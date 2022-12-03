@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="user.xsd">
+    <user>
+        <id_user>1</id_user>
+        <first_name>Mark</first_name>
+        <last_name>Smoliak</last_name>
+        <sex>male</sex>
+        <email>smoliak23@gmail.com</email>
+        <date_of_birth>2003-12-18</date_of_birth>
+        <taxes>
+            <tax>
+                <id_payment>321</id_payment>
+                <tax_id>1</tax_id>
+                <value>3423.312</value>
+                <amount_of_tax>1677.4228799999999</amount_of_tax>
+                <payment_date>2002-04-05</payment_date>
+            </tax>
+        </taxes>
+    </user>
+    <user>
+        <id_user>612456</id_user>
+        <first_name>Gran</first_name>
+        <last_name>Barnum</last_name>
+        <sex>male</sex>
+        <email>abrabak@gmail.com</email>
+        <date_of_birth>2004-01-12</date_of_birth>
+        <taxes/>
+    </user>
+</root>

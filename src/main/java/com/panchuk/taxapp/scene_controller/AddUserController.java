@@ -109,8 +109,6 @@ public class AddUserController implements Initializable {
             LoggerController.daoException(e, ShowUsersSceneController.class);
         }
 
-        System.out.println(user.getId());
-
         MainApplication.getMainAppController().setUser(user);
 
     }

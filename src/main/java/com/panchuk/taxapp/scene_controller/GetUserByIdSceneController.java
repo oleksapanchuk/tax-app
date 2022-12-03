@@ -11,11 +11,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import org.apache.log4j.Logger;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class GetUserByIdSceneController implements Initializable {
+    static final Logger logger = Logger.getLogger(GetUserByIdSceneController.class);
 
     @FXML
     private TextField tfGetUserById;
@@ -38,6 +40,7 @@ public class GetUserByIdSceneController implements Initializable {
 
     @FXML
     private void handleButtonGetUserById() {
+        logger.info("handleButtonGetUserById clicked");
         String userIdForFindStr = tfGetUserById.getText();
         if (!Validator.isInteger(userIdForFindStr, "id payment")) return;
         int userIdForFind = Integer.parseInt(userIdForFindStr);

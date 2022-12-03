@@ -15,12 +15,14 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.apache.log4j.Logger;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class FindTaxSceneController implements Initializable {
+    static final Logger logger = Logger.getLogger(FindUserSceneController.class);
 
     @FXML
     private TableView<TaxType> taxesTable;
@@ -62,6 +64,8 @@ public class FindTaxSceneController implements Initializable {
     @FXML
     public void actionRange() {
 
+        logger.info("actionRange clicked");
+
         String startValueStr = tfStartRange.getText();
         String endValueStr = tfEndRange.getText();
 
@@ -83,6 +87,9 @@ public class FindTaxSceneController implements Initializable {
 
     @FXML
     public void actionType() {
+
+        logger.info("actionType clicked");
+
         String typeStr = tfFindType.getText();
         if (!Validator.isInteger(typeStr, "tax type")) return;
         int type = Integer.parseInt(typeStr);
@@ -102,6 +109,7 @@ public class FindTaxSceneController implements Initializable {
     }
 
     public void loadData() {
+        logger.info("loadData");
 
         idPaymentCol.setCellValueFactory(new PropertyValueFactory<>("idNumber"));
         taxTypeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
