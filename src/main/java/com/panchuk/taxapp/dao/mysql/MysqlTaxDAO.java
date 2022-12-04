@@ -483,7 +483,6 @@ public class MysqlTaxDAO implements TaxDAO {
 
         try (Connection con = DBCPDataSource.getConnection()) {
 
-
             if (query.equals(ProjectConstant.FIND_ALL_USERS)) return findAllUsers(con);
 
             if (query.startsWith(ProjectConstant.FIND_BY_ID)) {

@@ -53,7 +53,7 @@
                               <Font name="Arial Rounded MT Bold" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#handleButton2Action" prefHeight="45.0" prefWidth="200.0" styleClass="btnMainMenu" text="GET USER" textFill="WHITE">
+                        <Button fx:id="btnGetUser" mnemonicParsing="false" onAction="#handleButton2Action" prefHeight="45.0" prefWidth="200.0" styleClass="btnMainMenu" text="GET USER" textFill="WHITE">
                            <VBox.margin>
                               <Insets bottom="40.0" left="20.0" right="20.0" />
                            </VBox.margin>
@@ -61,7 +61,7 @@
                               <Font name="Arial Rounded MT Bold" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#handleButton3Action" prefHeight="45.0" prefWidth="200.0" styleClass="btnMainMenu" text="FIND USER" textFill="WHITE">
+                        <Button fx:id="btnFindUser" mnemonicParsing="false" onAction="#handleButton3Action" prefHeight="45.0" prefWidth="200.0" styleClass="btnMainMenu" text="FIND USER" textFill="WHITE">
                            <VBox.margin>
                               <Insets bottom="40.0" left="20.0" right="20.0" />
                            </VBox.margin>
@@ -69,7 +69,7 @@
                               <Font name="Arial Rounded MT Bold" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#handleButton4Action" prefHeight="45.0" prefWidth="200.0" styleClass="btnMainMenu" text="SORT USER" textFill="WHITE">
+                        <Button fx:id="btnSortUser" mnemonicParsing="false" onAction="#handleButton4Action" prefHeight="45.0" prefWidth="200.0" styleClass="btnMainMenu" text="SORT USER" textFill="WHITE">
                            <VBox.margin>
                               <Insets bottom="40.0" left="20.0" right="20.0" />
                            </VBox.margin>
@@ -77,7 +77,7 @@
                               <Font name="Arial Rounded MT Bold" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#handleButton5Action" prefHeight="45.0" prefWidth="200.0" styleClass="btnMainMenu" text="FIND TAX" textFill="WHITE">
+                        <Button fx:id="btnFindTax" mnemonicParsing="false" onAction="#handleButton5Action" prefHeight="45.0" prefWidth="200.0" styleClass="btnMainMenu" text="FIND TAX" textFill="WHITE">
                            <VBox.margin>
                               <Insets bottom="35.0" left="20.0" right="20.0" />
                            </VBox.margin>
@@ -85,7 +85,7 @@
                               <Font name="Arial Rounded MT Bold" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#handleButton6Action" prefHeight="45.0" prefWidth="200.0" styleClass="btnMainMenu" text="SHOW USERS" textFill="WHITE">
+                        <Button fx:id="btnShowUser" mnemonicParsing="false" onAction="#handleButton6Action" prefHeight="45.0" prefWidth="200.0" styleClass="btnMainMenu" text="SHOW USERS" textFill="WHITE">
                            <VBox.margin>
                               <Insets bottom="40.0" left="20.0" right="20.0" />
                            </VBox.margin>
